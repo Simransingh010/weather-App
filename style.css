@@ -57,8 +57,8 @@ body.light-mode {
     background-color: var(--card-background-dark);
     border-radius: 12px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    padding: 30px;
-    max-width: 400px;
+    padding: 20px;
+    max-width: 350px;
     width: 100%;
     text-align: center;
     transition: background-color 0.3s, box-shadow 0.3s;
@@ -73,16 +73,18 @@ body.light-mode .card {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .search input {
-    width: calc(100% - 50px);
+    flex: 1;
     padding: 10px;
     border: 1px solid var(--input-border-dark);
-    border-radius: 20px;
+    border-radius: 10px;
     background-color: var(--input-background-dark);
     color: var(--input-text-color-dark);
     outline: none;
+    margin-right: 10px;
     transition: border 0.3s, background-color 0.3s;
 }
 
@@ -96,11 +98,12 @@ body.light-mode .search input {
     background: var(--button-background-dark);
     border: none;
     padding: 10px;
-    border-radius: 50%;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 1.2rem;
     transition: background 0.3s;
     outline: none;
+    flex-shrink: 0;
 }
 
 .search button:hover {
@@ -130,22 +133,29 @@ body.light-mode .error {
 }
 
 .weather img {
-    width: 100px;
-    margin: 10px 0;
+    width: 80px;
+    margin: 10px auto;
 }
 
 .details {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 10px;
-    justify-content: center;
+    align-items: center;
 }
 
 .details .col {
-    width: 48%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 10px;
+    background-color: var(--input-background-dark);
+    border-radius: 10px;
+}
+
+body.light-mode .details .col {
+    background-color: var(--input-background-light);
 }
 
 .description {
@@ -160,7 +170,7 @@ body.light-mode .weather p {
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
     .card {
-        padding: 20px;
+        padding: 15px;
         max-width: 100%;
     }
 
@@ -169,34 +179,27 @@ body.light-mode .weather p {
         right: 10px;
     }
 
-    .search {
-        flex-direction: column;
-    }
-
     .search input {
-        width: 100%;
         margin-bottom: 10px;
-        padding: 8px;
+        margin-right: 0;
     }
 
     .search button {
         width: 100%;
-        padding: 8px;
     }
 
     .details .col {
-        width: 100%;
+        flex-direction: row;
     }
 }
 
 @media (max-width: 480px) {
     .card {
-        padding: 15px;
+        padding: 10px;
     }
 
     .weather img {
-        width: 80px;
-        margin: 10px auto;
+        width: 70px;
     }
 
     .details .col {
