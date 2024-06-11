@@ -1,0 +1,158 @@
+:root {
+    --background-color-dark: #121212;
+    --card-background-dark: #1e1e1e;
+    --text-color-dark: #ffffff;
+    --button-background-dark: #333;
+    --button-hover-dark: #444;
+    --input-background-dark: #2a2a2a;
+    --input-text-color-dark: #e0e0e0;
+    --input-border-dark: #444;
+    --input-placeholder-dark: #888;
+    --error-color-dark: #ff6b6b;
+
+    --background-color-light: #f3f3f3;
+    --card-background-light: #ffffff;
+    --text-color-light: #333333;
+    --button-background-light: #dddddd;
+    --button-hover-light: #cccccc;
+    --input-background-light: #eeeeee;
+    --input-text-color-light: #333333;
+    --input-border-light: #cccccc;
+    --input-placeholder-light: #888888;
+    --error-color-light: #d9534f;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-mode {
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+}
+
+.theme-toggle-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.theme-toggle-button button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.card {
+    background-color: var(--card-background-dark);
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+body.light-mode .card {
+    background-color: var(--card-background-light);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.search {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.search input {
+    width: calc(100% - 50px);
+    padding: 10px;
+    border: 1px solid var(--input-border-dark);
+    border-radius: 20px;
+    background-color: var(--input-background-dark);
+    color: var(--input-text-color-dark);
+    outline: none;
+    transition: border 0.3s, background-color 0.3s;
+}
+
+body.light-mode .search input {
+    background-color: var(--input-background-light);
+    border: 1px solid var(--input-border-light);
+    color: var(--input-text-color-light);
+}
+
+.search button {
+    background: var(--button-background-dark);
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.3s;
+    outline: none;
+}
+
+.search button:hover {
+    background: var(--button-hover-dark);
+}
+
+body.light-mode .search button {
+    background: var(--button-background-light);
+}
+
+body.light-mode .search button:hover {
+    background: var(--button-hover-light);
+}
+
+.error {
+    display: none;
+    margin-bottom: 20px;
+    color: var(--error-color-dark);
+}
+
+body.light-mode .error {
+    color: var(--error-color-light);
+}
+
+.weather {
+    display: none;
+}
+
+.weather img {
+    width: 100px;
+    margin: 10px 0;
+}
+
+.details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.details .col {
+    width: 48%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.description {
+    margin-top: 10px;
+}
+
+body.light-mode .description,
+body.light-mode .weather p {
+    color: var(--text-color-light);
+}
