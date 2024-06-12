@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     weatherIcon.src = "images/mist.png";
                     break;
                 default:
-                    weatherIcon.src = "images/default.png";
+                    weatherIcon.src = "images/clear.png";
                     break;
             }
 
